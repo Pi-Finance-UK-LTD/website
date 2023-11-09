@@ -24,17 +24,20 @@ import SectionButton from '../components/SectionButton.astro'
     <section>
       <Card>
         <div class="mission-card">
-          <div>
-            <label>Mission</label>
-            <h2>
-              Welcome to Pi Finance UK, London's Premier Web3 FinTech Innovator
-            </h2>
-            <p>
-              Based in the heart of London, we merge the sophistication of
-              traditional finance with the pioneering innovations of web3 to
-              deliver unparalleled consulting and software solutions in the
-              FinTech sector.
-            </p>
+          <div class="bodyText">
+            <div>
+              <label>Mission</label>
+              <h2>
+                Welcome to Pi Finance UK, London's Premier Web3 FinTech
+                Innovator
+              </h2>
+              <p>
+                Based in the heart of London, we merge the sophistication of
+                traditional finance with the pioneering innovations of web3 to
+                deliver unparalleled consulting and software solutions in the
+                FinTech sector.
+              </p>
+            </div>
             <SectionButton href="#">Learn How</SectionButton>
           </div>
           <div class="image">
@@ -103,6 +106,11 @@ import SectionButton from '../components/SectionButton.astro'
     > div:last-child {
       margin-right: 0;
     }
+  }
+  .mission-card .bodyText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .why-card {
     max-width: 50%;
