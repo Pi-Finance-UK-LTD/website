@@ -41,7 +41,7 @@ import Footer from '../components/Footer.astro'
             </div>
             <SectionButton href="#">Learn How</SectionButton>
           </div>
-          <div class="image">
+          <div class="image hide">
             <Image src={missionImg} alt="GB BTC Flag" />
           </div>
         </div>
@@ -67,7 +67,7 @@ import Footer from '../components/Footer.astro'
       </Card>
       <Card>
         <div class="mission-card">
-          <div class="bodyText" style="width: 40%;">
+          <div class="bodyText">
             <div>
               <label>01</label>
               <h3>Deep FinTech Expertise</h3>
@@ -85,7 +85,7 @@ import Footer from '../components/Footer.astro'
       </Card>
       <Card>
         <div class="mission-card">
-          <div class="bodyText" style="width: 40%;">
+          <div class="bodyText">
             <div>
               <label>02</label>
               <h3>Web3 Pioneers</h3>
@@ -103,7 +103,7 @@ import Footer from '../components/Footer.astro'
       </Card>
       <Card>
         <div class="mission-card">
-          <div class="bodyText" style="width: 40%;">
+          <div class="bodyText">
             <div>
               <label>03</label>
               <h3>Boutique Consulting</h3>
@@ -145,6 +145,8 @@ import Footer from '../components/Footer.astro'
     font-size: 1rem;
   }
   .image > img {
+    object-fit: cover;
+    width: 100%;
     border-radius: 20px;
   }
   .hero-card {
@@ -161,13 +163,20 @@ import Footer from '../components/Footer.astro'
   .mission-card {
     display: flex;
     justify-content: space-between;
+    flex-wrap: no-wrap;
+
     > div {
       margin-right: 2rem;
+      flex: 0 0 auto;
+    }
+    > div:first-child {
+      flex: 0 0 40%;
     }
     > div:last-child {
       margin-right: 0;
     }
   }
+
   .mission-card .bodyText {
     display: flex;
     flex-direction: column;
@@ -194,5 +203,18 @@ import Footer from '../components/Footer.astro'
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  @media (max-width: 800px) {
+    .mission-card {
+      flex-wrap: wrap;
+    }
+    .mission-card > div {
+      flex: 1 0 100%;
+    }
+
+    .hide {
+      display: none;
+    }
   }
 </style>
