@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
+import Header from '../components/Header.astro'
+import hero from '../images/pifi-hero.webp'
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <Card class="hero-card" invertColor backgroundImageUrl={hero.src}>
+      <Header />
+      <div class="hero">
+        <h1 class="hero-heading">
+          Bridging Traditional Finance with the Future
+        </h1>
+      </div>
+    </Card>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 2rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-card {
+    padding-top: 1.5rem;
+  }
+  .hero {
+    height: 500px;
+    display: flex;
+    align-items: center;
+  }
+  .hero-heading {
+    width: 30%;
+  }
+</style>

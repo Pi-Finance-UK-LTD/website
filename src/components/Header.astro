@@ -1,0 +1,19 @@
+---
+interface Props {}
+
+import logo from '../images/pifi-logo.svg'
+import { Image } from 'astro:assets'
+---
+
+<header>
+  <Image src={logo} alt="Pi Finance UK Logo" width={50} />
+  <button>Menu</button>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+</style>

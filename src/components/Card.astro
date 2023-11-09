@@ -1,0 +1,47 @@
+---
+interface Props {
+  href?: string
+  backgroundImageUrl?: string
+  invertColor?: boolean
+  class?: string
+}
+
+const {
+  href,
+  backgroundImageUrl,
+  invertColor,
+  class: className,
+  ...rest
+} = Astro.props
+const bgImage = backgroundImageUrl ? `url(${backgroundImageUrl})` : 'none'
+const color = invertColor ? '#fff' : '#000'
+---
+
+<div class={`card ${className || ''}`} {...rest}>
+  {
+    href ? (
+      <a class="link" href={href}>
+        <slot />
+      </a>
+    ) : (
+      <slot />
+    )
+  }
+</div>
+
+<style define:vars={{ bgImage, color }}>
+  .card {
+    background-color: #fdd;
+    border-radius: 20px;
+    background-image: var(--bgImage);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2rem 3rem;
+    width: 100%;
+    color: var(--color);
+  }
+  .card > .link {
+    width: 100%;
+    text-decoration: none;
+  }
+</style>
