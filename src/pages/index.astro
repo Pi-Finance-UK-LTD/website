@@ -4,6 +4,7 @@ import Card from '../components/Card.astro'
 import Header from '../components/Header.astro'
 import heroImg from '../images/pifi-hero.webp'
 import missionImg from '../images/gb-btc-flag.webp'
+import whyImg from '../images/gb-btc-large-flag.webp'
 import { Image } from 'astro:assets'
 import SectionButton from '../components/SectionButton.astro'
 ---
@@ -42,18 +43,43 @@ import SectionButton from '../components/SectionButton.astro'
         </div>
       </Card>
     </section>
+    <section class="alt">
+      <Card
+        invertColor
+        bgImageUrl={whyImg.src}
+        bgColor="rgba(0,0,0,0.6)"
+        bgBlendMode="darken"
+      >
+        <div class="why-card">
+          <div>
+            <h2>Why Choose Pi Finance UK?</h2>
+            <p>
+              We bring our expertise to multiple construction sectors,
+              developing the industry's future and redefining what is possible,
+              one project at a time.
+            </p>
+          </div>
+        </div>
+      </Card>
+    </section>
   </main>
 </Layout>
 
 <style>
   main {
-    margin: auto;
-    padding: 2rem;
     width: 100%;
     max-width: 100%;
   }
   section {
+    padding: 2rem;
     margin-bottom: 3rem;
+  }
+  section.alt {
+    background-color: var(--bg-alt-color);
+  }
+  .card p {
+    font-size: 1.2rem;
+    line-height: 1.6;
   }
   .image > img {
     border-radius: 20px;
@@ -78,8 +104,10 @@ import SectionButton from '../components/SectionButton.astro'
       margin-right: 0;
     }
   }
-  .mission-card p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+  .why-card {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 </style>

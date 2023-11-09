@@ -3,6 +3,7 @@ interface Props {
   href?: string
   bgImageUrl?: string
   bgColor?: string
+  bgBlendMode?: 'lighten' | 'darken'
   invertColor?: boolean
   class?: string
 }
@@ -12,6 +13,7 @@ const {
   bgImageUrl,
   bgColor,
   invertColor,
+  bgBlendMode = 'normal',
   class: className,
   ...rest
 } = Astro.props
@@ -19,7 +21,7 @@ const bgImage = bgImageUrl ? `url(${bgImageUrl})` : 'none'
 const color = invertColor ? '#fff' : '#000'
 ---
 
-<div class={`card ${className || ''}`} {...rest}>
+<div class:list={['card', { [className as string]: !!className }]} {...rest}>
   {
     href ? (
       <a class="link" href={href}>
@@ -31,7 +33,7 @@ const color = invertColor ? '#fff' : '#000'
   }
 </div>
 
-<style define:vars={{ bgImage, color, bgColor }}>
+<style define:vars={{ bgImage, color, bgColor, bgBlendMode }}>
   .card {
     background-color: var(--bgColor, #fff);
     border-radius: 20px;
@@ -41,6 +43,7 @@ const color = invertColor ? '#fff' : '#000'
     padding: 2rem 3rem;
     width: 100%;
     color: var(--color);
+    background-blend-mode: var(--bgBlendMode);
   }
   .card > .link {
     width: 100%;
