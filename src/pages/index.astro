@@ -212,11 +212,19 @@ import Footer from '../components/Footer.astro'
   }
 
   @media (max-width: 800px) {
+    section {
+      padding: 1rem;
+    }
+
     .mission-card {
       flex-wrap: wrap;
     }
     .mission-card > div {
       flex: 1 0 100%;
+    }
+
+    .why-card {
+      max-width: 100%;
     }
 
     .hide {
