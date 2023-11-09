@@ -1,0 +1,22 @@
+---
+import logo from '../images/pifi-logo.svg'
+import { Image } from 'astro:assets'
+import Card from './Card.astro'
+---
+
+<footer>
+  <Card>
+    <div>
+      <Image src={logo} alt="Pi Finance UK Logo" width={30} />
+    </div>
+    <small>© <span id="year"></span> Pi Finance UK Ltd</small>
+  </Card>
+</footer>
+
+<script>
+  const year = document.getElementById('year')
+
+  if (year) {
+    year.textContent = new Date().getFullYear().toString()
+  }
+</script>

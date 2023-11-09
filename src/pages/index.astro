@@ -7,6 +7,7 @@ import missionImg from '../images/gb-btc-flag.webp'
 import whyImg from '../images/gb-btc-large-flag.webp'
 import { Image } from 'astro:assets'
 import SectionButton from '../components/SectionButton.astro'
+import Footer from '../components/Footer.astro'
 ---
 
 <Layout title="Pi Finance UK">
@@ -46,7 +47,7 @@ import SectionButton from '../components/SectionButton.astro'
         </div>
       </Card>
     </section>
-    <section class="alt">
+    <section class="alt why-section">
       <Card
         invertColor
         bgImageUrl={whyImg.src}
@@ -64,6 +65,63 @@ import SectionButton from '../components/SectionButton.astro'
           </div>
         </div>
       </Card>
+      <Card>
+        <div class="mission-card">
+          <div class="bodyText" style="width: 40%;">
+            <div>
+              <label>01</label>
+              <h3>Deep FinTech Expertise</h3>
+            </div>
+            <p class="small">
+              With our roots firmly entrenched in the finance sector, we have an
+              unparalleled understanding of the complexities and nuances that
+              govern it.
+            </p>
+          </div>
+          <div class="image">
+            <Image src={missionImg} alt="GB BTC Flag" height={300} />
+          </div>
+        </div>
+      </Card>
+      <Card>
+        <div class="mission-card">
+          <div class="bodyText" style="width: 40%;">
+            <div>
+              <label>02</label>
+              <h3>Web3 Pioneers</h3>
+            </div>
+            <p class="small">
+              We're not just followers of the web3 revolution. We're leaders.
+              Our team is at the forefront, ensuring you leverage the latest and
+              most effective blockchain technologies.
+            </p>
+          </div>
+          <div class="image">
+            <Image src={missionImg} alt="GB BTC Flag" height={300} />
+          </div>
+        </div>
+      </Card>
+      <Card>
+        <div class="mission-card">
+          <div class="bodyText" style="width: 40%;">
+            <div>
+              <label>03</label>
+              <h3>Boutique Consulting</h3>
+            </div>
+            <p class="small">
+              Every client is unique. That's why our consulting services are
+              tailored to fit the specific needs of your business. Expect
+              personalized, hands-on guidance every step of the way.
+            </p>
+          </div>
+          <div class="image">
+            <Image src={missionImg} alt="GB BTC Flag" height={300} />
+          </div>
+        </div>
+      </Card>
+    </section>
+    <section class="alt">
+      <Footer />
     </section>
   </main>
 </Layout>
@@ -75,7 +133,6 @@ import SectionButton from '../components/SectionButton.astro'
   }
   section {
     padding: 2rem;
-    margin-bottom: 3rem;
   }
   section.alt {
     background-color: var(--bg-alt-color);
@@ -83,6 +140,9 @@ import SectionButton from '../components/SectionButton.astro'
   .card p {
     font-size: 1.2rem;
     line-height: 1.6;
+  }
+  .card p.small {
+    font-size: 1rem;
   }
   .image > img {
     border-radius: 20px;
@@ -100,6 +160,7 @@ import SectionButton from '../components/SectionButton.astro'
   }
   .mission-card {
     display: flex;
+    justify-content: space-between;
     > div {
       margin-right: 2rem;
     }
@@ -111,6 +172,22 @@ import SectionButton from '../components/SectionButton.astro'
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  .why-section {
+    > .card:not(:first-child):not(:last-child) {
+      border-radius: 0;
+      border-bottom: 1px solid var(--bg-alt-color);
+    }
+
+    > .card:first-child {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    > .card:last-child {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
   }
   .why-card {
     max-width: 50%;
