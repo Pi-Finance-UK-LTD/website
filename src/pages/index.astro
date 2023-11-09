@@ -48,77 +48,79 @@ import Footer from '../components/Footer.astro'
       </Card>
     </section>
     <section class="alt why-section">
-      <Card
-        invertColor
-        bgImageUrl={whyImg.src}
-        bgColor="rgba(0,0,0,0.6)"
-        bgBlendMode="darken"
-      >
-        <div class="why-card">
-          <div>
-            <h2>Why Choose Pi Finance UK?</h2>
-            <p>
-              We bring our expertise to multiple construction sectors,
-              developing the industry's future and redefining what is possible,
-              one project at a time.
-            </p>
-          </div>
-        </div>
-      </Card>
-      <Card>
-        <div class="mission-card">
-          <div class="bodyText">
+      <div class="why-container">
+        <Card
+          invertColor
+          bgImageUrl={whyImg.src}
+          bgColor="rgba(0,0,0,0.6)"
+          bgBlendMode="darken"
+        >
+          <div class="why-card">
             <div>
-              <label>01</label>
-              <h3>Deep FinTech Expertise</h3>
+              <h2>Why Choose Pi Finance UK?</h2>
+              <p>
+                We bring our expertise to multiple construction sectors,
+                developing the industry's future and redefining what is
+                possible, one project at a time.
+              </p>
             </div>
-            <p class="small">
-              With our roots firmly entrenched in the finance sector, we have an
-              unparalleled understanding of the complexities and nuances that
-              govern it.
-            </p>
           </div>
-          <div class="image">
-            <Image src={missionImg} alt="GB BTC Flag" height={300} />
-          </div>
-        </div>
-      </Card>
-      <Card>
-        <div class="mission-card">
-          <div class="bodyText">
-            <div>
-              <label>02</label>
-              <h3>Web3 Pioneers</h3>
+        </Card>
+        <Card>
+          <div class="mission-card">
+            <div class="bodyText">
+              <div>
+                <label>01</label>
+                <h3>Deep FinTech Expertise</h3>
+              </div>
+              <p class="small">
+                With our roots firmly entrenched in the finance sector, we have
+                an unparalleled understanding of the complexities and nuances
+                that govern it.
+              </p>
             </div>
-            <p class="small">
-              We're not just followers of the web3 revolution. We're leaders.
-              Our team is at the forefront, ensuring you leverage the latest and
-              most effective blockchain technologies.
-            </p>
-          </div>
-          <div class="image">
-            <Image src={missionImg} alt="GB BTC Flag" height={300} />
-          </div>
-        </div>
-      </Card>
-      <Card>
-        <div class="mission-card">
-          <div class="bodyText">
-            <div>
-              <label>03</label>
-              <h3>Boutique Consulting</h3>
+            <div class="image">
+              <Image src={missionImg} alt="GB BTC Flag" height={300} />
             </div>
-            <p class="small">
-              Every client is unique. That's why our consulting services are
-              tailored to fit the specific needs of your business. Expect
-              personalized, hands-on guidance every step of the way.
-            </p>
           </div>
-          <div class="image">
-            <Image src={missionImg} alt="GB BTC Flag" height={300} />
+        </Card>
+        <Card>
+          <div class="mission-card">
+            <div class="bodyText">
+              <div>
+                <label>02</label>
+                <h3>Web3 Pioneers</h3>
+              </div>
+              <p class="small">
+                We're not just followers of the web3 revolution. We're leaders.
+                Our team is at the forefront, ensuring you leverage the latest
+                and most effective blockchain technologies.
+              </p>
+            </div>
+            <div class="image">
+              <Image src={missionImg} alt="GB BTC Flag" height={300} />
+            </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+        <Card>
+          <div class="mission-card">
+            <div class="bodyText">
+              <div>
+                <label>03</label>
+                <h3>Boutique Consulting</h3>
+              </div>
+              <p class="small">
+                Every client is unique. That's why our consulting services are
+                tailored to fit the specific needs of your business. Expect
+                personalized, hands-on guidance every step of the way.
+              </p>
+            </div>
+            <div class="image">
+              <Image src={missionImg} alt="GB BTC Flag" height={300} />
+            </div>
+          </div>
+        </Card>
+      </div>
     </section>
     <section class="alt">
       <Footer />
@@ -183,20 +185,24 @@ import Footer from '../components/Footer.astro'
     justify-content: space-between;
   }
   .why-section {
-    > .card:not(:first-child):not(:last-child) {
+    > .why-container > .card:not(:first-child):not(:last-child) {
       border-radius: 0;
       border-bottom: 1px solid var(--bg-alt-color);
     }
 
-    > .card:first-child {
+    > .why-container > .card:first-child {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
 
-    > .card:last-child {
+    > .why-container > .card:last-child {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
+  }
+  .why-container {
+    max-width: 1000px;
+    margin: 0 auto;
   }
   .why-card {
     max-width: 50%;
