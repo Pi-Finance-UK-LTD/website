@@ -1,19 +1,21 @@
 ---
 interface Props {
   href?: string
-  backgroundImageUrl?: string
+  bgImageUrl?: string
+  bgColor?: string
   invertColor?: boolean
   class?: string
 }
 
 const {
   href,
-  backgroundImageUrl,
+  bgImageUrl,
+  bgColor,
   invertColor,
   class: className,
   ...rest
 } = Astro.props
-const bgImage = backgroundImageUrl ? `url(${backgroundImageUrl})` : 'none'
+const bgImage = bgImageUrl ? `url(${bgImageUrl})` : 'none'
 const color = invertColor ? '#fff' : '#000'
 ---
 
@@ -29,9 +31,9 @@ const color = invertColor ? '#fff' : '#000'
   }
 </div>
 
-<style define:vars={{ bgImage, color }}>
+<style define:vars={{ bgImage, color, bgColor }}>
   .card {
-    background-color: #fdd;
+    background-color: var(--bgColor, #fff);
     border-radius: 20px;
     background-image: var(--bgImage);
     background-repeat: no-repeat;

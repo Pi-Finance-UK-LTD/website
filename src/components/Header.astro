@@ -1,13 +1,30 @@
 ---
-interface Props {}
-
 import logo from '../images/pifi-logo.svg'
 import { Image } from 'astro:assets'
 ---
 
 <header>
   <Image src={logo} alt="Pi Finance UK Logo" width={50} />
-  <button>Menu</button>
+  <button id="menu-button" class="menu-button">
+    <svg
+      preserveAspectRatio="xMidYMid meet"
+      data-bbox="44 64 112 72"
+      viewBox="44 64 112 72"
+      height="13"
+      width="13"
+      xmlns="http://www.w3.org/2000/svg"
+      data-type="shape"
+      role="img"
+      aria-label="Open site navigation"
+    >
+      <g>
+        <path d="M156 64v6H44v-6h112z"></path>
+        <path d="M156 97v6H44v-6h112z"></path>
+        <path d="M156 130v6H44v-6h112z"></path>
+      </g>
+    </svg>
+     MENU</button
+  >
 </header>
 
 <style>
@@ -16,4 +33,35 @@ import { Image } from 'astro:assets'
     justify-content: space-between;
     align-items: flex-start;
   }
+  header .menu-button {
+    background: none;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    background-color: #efefef;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+
+    > svg {
+      margin-right: 0.5rem;
+    }
+
+    &:hover {
+      background-color: #ccc;
+    }
+  }
 </style>
+
+<script>
+  import { isMenuOpen } from '../store'
+
+  function openMenu() {
+    isMenuOpen.set(true)
+    console.log('open menu')
+  }
+
+  document.getElementById('menu-button')?.addEventListener('click', openMenu)
+</script>

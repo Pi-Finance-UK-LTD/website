@@ -2,19 +2,46 @@
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 import Header from '../components/Header.astro'
-import hero from '../images/pifi-hero.webp'
+import heroImg from '../images/pifi-hero.webp'
+import missionImg from '../images/gb-btc-flag.webp'
+import { Image } from 'astro:assets'
+import SectionButton from '../components/SectionButton.astro'
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Pi Finance UK">
   <main>
-    <Card class="hero-card" invertColor backgroundImageUrl={hero.src}>
-      <Header />
-      <div class="hero">
-        <h1 class="hero-heading">
-          Bridging Traditional Finance with the Future
-        </h1>
-      </div>
-    </Card>
+    <section>
+      <Card class="hero-card" invertColor bgImageUrl={heroImg.src}>
+        <Header />
+        <div class="hero">
+          <h1 class="hero-heading">
+            Bridging Traditional Finance with the Future
+          </h1>
+        </div>
+      </Card>
+    </section>
+    <section>
+      <Card>
+        <div class="mission-card">
+          <div>
+            <label>Mission</label>
+            <h2>
+              Welcome to Pi Finance UK, London's Premier Web3 FinTech Innovator
+            </h2>
+            <p>
+              Based in the heart of London, we merge the sophistication of
+              traditional finance with the pioneering innovations of web3 to
+              deliver unparalleled consulting and software solutions in the
+              FinTech sector.
+            </p>
+            <SectionButton href="#">Learn How</SectionButton>
+          </div>
+          <div class="image">
+            <Image src={missionImg} alt="GB BTC Flag" />
+          </div>
+        </div>
+      </Card>
+    </section>
   </main>
 </Layout>
 
@@ -24,6 +51,12 @@ import hero from '../images/pifi-hero.webp'
     padding: 2rem;
     width: 100%;
     max-width: 100%;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  .image > img {
+    border-radius: 20px;
   }
   .hero-card {
     padding-top: 1.5rem;
@@ -35,5 +68,18 @@ import hero from '../images/pifi-hero.webp'
   }
   .hero-heading {
     width: 30%;
+  }
+  .mission-card {
+    display: flex;
+    > div {
+      margin-right: 2rem;
+    }
+    > div:last-child {
+      margin-right: 0;
+    }
+  }
+  .mission-card p {
+    font-size: 1.2rem;
+    line-height: 1.6;
   }
 </style>
