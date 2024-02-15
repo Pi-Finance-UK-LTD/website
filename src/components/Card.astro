@@ -36,11 +36,11 @@ const color = invertColor ? '#fff' : '#000'
 <style define:vars={{ bgImage, color, bgColor, bgBlendMode }}>
   .card {
     background-color: var(--bgColor, #fff);
-    border-radius: 20px;
+    border-radius: 2rem;
     background-image: var(--bgImage);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 2rem 3rem;
+    padding: 2rem;
     width: 100%;
     color: var(--color);
     background-blend-mode: var(--bgBlendMode);
@@ -52,7 +52,7 @@ const color = invertColor ? '#fff' : '#000'
 
   @media (max-width: 800px) {
     .card {
-      padding: 1rem 1.5rem;
+      padding: 1rem;
     }
   }
 </style>

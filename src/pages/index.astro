@@ -2,127 +2,115 @@
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 import Header from '../components/Header.astro'
-import heroImg from '../images/pifi-hero.webp'
 import missionImg from '../images/gb-btc-flag.webp'
 import whyImg from '../images/gb-btc-large-flag.webp'
 import { Image } from 'astro:assets'
-import SectionButton from '../components/SectionButton.astro'
 import Footer from '../components/Footer.astro'
+import Button from '../components/Button.astro'
 ---
 
 <Layout title="Pi Finance UK">
   <main>
-    <section>
-      <Card class="hero-card" invertColor bgImageUrl={heroImg.src}>
-        <Header />
+    <Header />
+    <section class="hero-section">
+      <Card bgColor="transparent" class="hero-card" invertColor>
         <div class="hero">
           <h1 class="hero-heading">
             Bridging Traditional Finance with the Future
           </h1>
-        </div>
-      </Card>
-    </section>
-    <section>
-      <Card>
-        <div class="mission-card">
-          <div class="bodyText">
-            <div>
-              <label>Mission</label>
-              <h2>
-                Welcome to Pi Finance UK, London's Premier Web3 FinTech
-                Innovator
-              </h2>
-              <p>
-                Based in the heart of London, we merge the sophistication of
-                traditional finance with the pioneering innovations of web3 to
-                deliver unparalleled consulting and software solutions in the
-                FinTech sector.
-              </p>
-            </div>
-            <SectionButton href="#">Learn How</SectionButton>
-          </div>
-          <div class="image hide">
-            <Image src={missionImg} alt="GB BTC Flag" />
+          <div class="hero-description">
+            <p>
+              Based in the heart of London, we merge the sophistication of
+              traditional finance with the pioneering innovations of web3 to
+              deliver unparalleled consulting and software solutions in the
+              FinTech sector.
+            </p>
+            <Button href="#" invertColors>Our services</Button>
           </div>
         </div>
       </Card>
     </section>
-    <section class="alt why-section">
-      <div class="why-container">
-        <Card
-          invertColor
-          bgImageUrl={whyImg.src}
-          bgColor="rgba(0,0,0,0.6)"
-          bgBlendMode="darken"
-        >
-          <div class="why-card">
-            <div>
-              <h2>Why Choose Pi Finance UK?</h2>
-              <p>
-                We bring our expertise to multiple construction sectors,
-                developing the industry's future and redefining what is
-                possible, one project at a time.
-              </p>
-            </div>
-          </div>
+    <section class="bg why-section">
+      <h2 style="text-align: center;">Why Choose Pi Finance?</h2>
+      <div class="why-grid">
+        <Card class="one">
+          <h3 class="title">Deep FinTech Expertise</h3>
+          <p>
+            With our roots firmly entrenched in the finance sector, we have an
+            unparalleled understanding of the complexities and nuances that
+            govern it.
+          </p>
         </Card>
-        <Card>
-          <div class="mission-card">
-            <div class="bodyText">
-              <div>
-                <label>01</label>
-                <h3>Deep FinTech Expertise</h3>
-              </div>
-              <p class="small">
-                With our roots firmly entrenched in the finance sector, we have
-                an unparalleled understanding of the complexities and nuances
-                that govern it.
-              </p>
-            </div>
-            <div class="image">
-              <Image src={missionImg} alt="GB BTC Flag" height={300} />
-            </div>
-          </div>
+        <Card class="two">
+          <h3 class="title">Web3 Pioneers</h3>
+          <p>
+            We're not just followers of the web3 revolution. We're leaders. Our
+            team is at the forefront, ensuring you leverage the latest and most
+            effective blockchain technologies.
+          </p>
         </Card>
-        <Card>
-          <div class="mission-card">
-            <div class="bodyText">
-              <div>
-                <label>02</label>
-                <h3>Web3 Pioneers</h3>
-              </div>
-              <p class="small">
-                We're not just followers of the web3 revolution. We're leaders.
-                Our team is at the forefront, ensuring you leverage the latest
-                and most effective blockchain technologies.
-              </p>
-            </div>
-            <div class="image">
-              <Image src={missionImg} alt="GB BTC Flag" height={300} />
-            </div>
-          </div>
+        <Card class="three">
+          <h3 class="title">Innovative Software Solutions</h3>
+          <p>
+            Our bespoke software solutions are crafted with precision,
+            integrating seamlessly with your operations to drive efficiency and
+            innovation. Web3 Pioneers We're not just followers of the web3
+            revolution. We're leaders. Our team is at the forefront, ensuring
+            you leverage the latest and most effective blockchain technologies.
+          </p>
         </Card>
-        <Card>
-          <div class="mission-card">
-            <div class="bodyText">
-              <div>
-                <label>03</label>
-                <h3>Boutique Consulting</h3>
-              </div>
-              <p class="small">
-                Every client is unique. That's why our consulting services are
-                tailored to fit the specific needs of your business. Expect
-                personalized, hands-on guidance every step of the way.
-              </p>
-            </div>
-            <div class="image">
-              <Image src={missionImg} alt="GB BTC Flag" height={300} />
-            </div>
-          </div>
+        <Card class="four">
+          <h3 class="title">Boutique Consulting</h3>
+          <p>
+            Every client is unique. That's why our consulting services are
+            tailored to fit the specific needs of your business. Expect
+            personalized, hands-on guidance every step of the way.
+          </p>
         </Card>
       </div>
     </section>
     <section class="alt">
+      <h2 style="text-align: center;">Our Services</h2>
+      <div class="services-section">
+        <Card>
+          <h3 class="title">Software Development</h3>
+          <p>
+            Whether you're looking for a blockchain integration, smart contract
+            development, or a fully-fledged dApp, our software team has got you
+            covered.
+          </p>
+        </Card>
+        <Card>
+          <h3 class="title">Strategy & Integration</h3>
+          <p>
+            As the financial world evolves, ensure your business does too. Let
+            us help you craft a strategic roadmap to web3 adoption and beyond.
+          </p>
+        </Card>
+        <Card>
+          <h3 class="title">Business Development</h3>
+          <p>
+            Harness the power of web3 to expand and grow. Our business
+            development experts can help you explore new markets, partnerships,
+            and opportunities within the decentralized financial ecosystem.
+          </p>
+        </Card>
+      </div>
+    </section>
+    <section class="join-section">
+      <h2><strong>Join the Web3 Revolution with Pi Finance UK</strong></h2>
+      <p>
+        The future of finance is unfolding, and with Pi Finance UK, you won't
+        just be a spectator. You'll be at the helm, steering your business
+        towards new horizons with confidence and expertise.
+      </p>
+      <p>
+        <strong>Connect with us today</strong> and take the first step in your web3
+        journey.
+      </p>
+      <Button invertColors href="#">Contact us</Button>
+    </section>
+    <section class="alt" style="padding: 0;">
       <Footer />
     </section>
   </main>
@@ -134,13 +122,16 @@ import Footer from '../components/Footer.astro'
     max-width: 100%;
   }
   section {
-    padding: 2rem;
+    padding: 6rem 2rem;
+  }
+  section.bg {
+    background-color: var(--bg-color);
   }
   section.alt {
     background-color: var(--bg-alt-color);
+    color: #000;
   }
   .card p {
-    font-size: 1.2rem;
     line-height: 1.6;
   }
   .card p.small {
@@ -151,64 +142,110 @@ import Footer from '../components/Footer.astro'
     width: 100%;
     border-radius: 20px;
   }
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
   .hero-card {
     padding-top: 1.5rem;
+    height: 100%;
   }
   .hero {
     height: 500px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   .hero-heading {
+    margin: 0;
+    padding-right: 4rem;
+    width: 60%;
+  }
+  .hero-description {
     width: 30%;
-  }
-  .mission-card {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: no-wrap;
-
-    > div {
-      margin-right: 2rem;
-      flex: 0 0 auto;
-    }
-    > div:first-child {
-      flex: 0 0 40%;
-    }
-    > div:last-child {
-      margin-right: 0;
-    }
-  }
-
-  .mission-card .bodyText {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: flex-start;
   }
+
   .why-section {
-    > .why-container > .card:not(:first-child):not(:last-child) {
-      border-radius: 0;
-      border-bottom: 1px solid var(--bg-alt-color);
-    }
-
-    > .why-container > .card:first-child {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    > .why-container > .card:last-child {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
-  }
-  .why-container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  .why-card {
-    max-width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    width: 75%;
+    height: 600px;
+  }
+
+  .why-grid p {
+    margin: 0;
+  }
+
+  .why-grid .card {
+    background-color: #333333;
+    color: #fff;
+  }
+
+  h3.title {
+    background: linear-gradient(
+      132deg,
+      var(--primary-color-1),
+      var(--primary-color-3),
+      var(--primary-color-6)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .why-grid .one {
+    grid-area: 1 / 1 / 4 / 2;
+    font-size: 1.75rem;
+  }
+  .why-grid .two {
+    grid-area: 1 / 2 / 3 / 3;
+  }
+  .why-grid .three {
+    grid-area: 4 / 1 / 5 / 2;
+    font-size: 0.75rem;
+  }
+  .why-grid .four {
+    grid-area: 3 / 2 / 5 / 3;
+    font-size: 1.5rem;
+  }
+
+  .services-section {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .services-section .card {
+    background-color: #dfdfee;
+  }
+
+  .join-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding-left: 14rem;
+    padding-right: 14rem;
+    text-align: center;
+  }
+
+  .join-section h2 {
+    font-size: 3rem;
   }
 
   @media (max-width: 800px) {

@@ -1,57 +1,30 @@
 ---
-import logo from '../images/pifi-logo.svg'
+import logo from '../images/pifi-logo-no-bg.svg'
 import { Image } from 'astro:assets'
 ---
 
 <header>
-  <Image src={logo} alt="Pi Finance UK Logo" width={50} />
-  <!-- <button id="menu-button" class="menu-button">
-    <svg
-      preserveAspectRatio="xMidYMid meet"
-      data-bbox="44 64 112 72"
-      viewBox="44 64 112 72"
-      height="13"
-      width="13"
-      xmlns="http://www.w3.org/2000/svg"
-      data-type="shape"
-      role="img"
-      aria-label="Open site navigation"
-    >
-      <g>
-        <path d="M156 64v6H44v-6h112z"></path>
-        <path d="M156 97v6H44v-6h112z"></path>
-        <path d="M156 130v6H44v-6h112z"></path>
-      </g>
-    </svg>
-     MENU</button
-  > -->
+  <Image src={logo} alt="Pi Finance UK Logo" width={30} />
+  <h3>PiFinance</h3>
 </header>
 
 <style>
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  html:not([data-scroll='0']) header {
+    background: var(--primary-color-3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  header .menu-button {
-    background: none;
-    border: none;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    background-color: #efefef;
-    font-weight: 300;
-    cursor: pointer;
+  header {
+    width: 100%;
     display: flex;
     align-items: center;
-    transition: all 0.2s ease-in-out;
-
-    > svg {
-      margin-right: 0.5rem;
-    }
-
-    &:hover {
-      background-color: #ccc;
-    }
+    gap: 0.6rem;
+    padding: 0.75rem 2rem;
+    position: fixed;
+    transition: background 0.25s;
+  }
+  header h3 {
+    font-weight: bold;
+    margin: 0;
   }
 </style>
 
@@ -64,4 +37,36 @@ import { Image } from 'astro:assets'
   }
 
   document.getElementById('menu-button')?.addEventListener('click', openMenu)
+
+  // The debounce function receives our function as a parameter
+  const debounce = (fn: { (...params: any[]): void; (arg0: any): void }) => {
+    // This holds the requestAnimationFrame reference, so we can cancel it if we wish
+    let frame: number
+
+    // The debounce function returns a new function that can receive a variable number of arguments
+    return (...params: any[]) => {
+      // If the frame variable has been defined, clear it now, and queue for next frame
+      if (frame) {
+        cancelAnimationFrame(frame)
+      }
+
+      // Queue our function call for the next frame
+      frame = requestAnimationFrame(() => {
+        // Call our function and pass any params we received
+        fn(...params)
+      })
+    }
+  }
+
+  // Reads out the scroll position and stores it in the data attribute
+  // so we can use it in our stylesheets
+  const storeScroll = () => {
+    document.documentElement.dataset.scroll = '' + window.scrollY
+  }
+
+  // Listen for new scroll events, here we debounce our `storeScroll` function
+  document.addEventListener('scroll', debounce(storeScroll), { passive: true })
+
+  // Update scroll position for first time
+  storeScroll()
 </script>

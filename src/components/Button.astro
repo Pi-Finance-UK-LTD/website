@@ -1,0 +1,46 @@
+---
+interface Props {
+  href: string
+  invertColors?: boolean
+}
+const { href, invertColors } = Astro.props
+---
+
+<a class:list={['button', { inverted: invertColors }]} href={href}>
+  <slot />
+</a>
+
+<style>
+  .button {
+    background: linear-gradient(
+      132deg,
+      var(--primary-color-1),
+      var(--primary-color-2),
+      var(--primary-color-3),
+      var(--primary-color-4)
+    );
+    border-radius: 2rem;
+    padding: 0.6rem 1.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+
+    &:hover {
+      background: var(--primary-color-4);
+    }
+  }
+  .inverted {
+    color: #fff;
+    background: transparent;
+    border: #fff 1px solid;
+
+    &:hover {
+      background: #fff;
+      color: var(--primary-color-4);
+    }
+  }
+</style>
