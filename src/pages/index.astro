@@ -226,7 +226,7 @@ import Button from '../components/Button.astro'
 
   .services-section {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .services-section .card {
@@ -248,16 +248,32 @@ import Button from '../components/Button.astro'
     font-size: 3rem;
   }
 
-  @media (max-width: 800px) {
-    section {
-      padding: 1rem;
+  @media (max-width: 1430px) {
+    .why-grid {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .why-grid {
+      height: 700px;
     }
 
-    .mission-card {
-      flex-wrap: wrap;
+    .join-section {
+      padding-left: 4rem;
+      padding-right: 4rem;
     }
-    .mission-card > div {
-      flex: 1 0 100%;
+  }
+
+  @media (max-width: 990px) {
+    .why-grid {
+      height: 850px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    section {
+      padding: 2rem 1rem;
     }
 
     .why-card {
@@ -266,6 +282,59 @@ import Button from '../components/Button.astro'
 
     .hide {
       display: none;
+    }
+
+    .hero {
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-heading {
+      padding-right: 0;
+      width: 100%;
+    }
+    .hero-description {
+      width: 100%;
+    }
+
+    .services-section {
+      flex-direction: column;
+    }
+
+    .why-grid {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto auto;
+      width: 100%;
+      height: auto;
+    }
+
+    .why-grid .one {
+      grid-column: 1;
+      grid-row: 1;
+      font-size: 1rem;
+    }
+    .why-grid .two {
+      grid-column: 1;
+      grid-row: 2;
+      font-size: 1rem;
+    }
+    .why-grid .three {
+      grid-column: 1;
+      grid-row: 3;
+      font-size: 1rem;
+    }
+    .why-grid .four {
+      grid-column: 1;
+      grid-row: 4;
+      font-size: 1rem;
+    }
+
+    .join-section {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      gap: 0.5rem;
+    }
+    .join-section h2 {
+      font-size: 2rem;
     }
   }
 </style>
