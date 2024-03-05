@@ -127,7 +127,7 @@ import Button from '../components/Button.astro'
               deliver unparalleled consulting and software solutions in the
               FinTech sector.
             </p>
-            <Button href="#" invertColors>Our services</Button>
+            <Button href="#services" invertColors>Our services</Button>
           </div>
         </div>
       </Card>
@@ -171,7 +171,7 @@ import Button from '../components/Button.astro'
         </Card>
       </div>
     </section>
-    <section class="alt">
+    <section id="services" class="alt">
       <h2 style="text-align: center;">Our Services</h2>
       <div class="services-section">
         <Card>
@@ -210,7 +210,7 @@ import Button from '../components/Button.astro'
         <strong>Connect with us today</strong> and take the first step in your web3
         journey.
       </p>
-      <Button invertColors href="#">Contact us</Button>
+      <Button invertColors href="mailto:info@pifi.uk">Contact us</Button>
     </section>
     <section class="alt" style="padding: 0;">
       <Footer />
@@ -266,6 +266,7 @@ import Button from '../components/Button.astro'
 
   .hero-section .animation {
     position: absolute;
+    z-index: 0;
     left: 55%;
   }
   .hero-section .animation path {
@@ -293,6 +294,8 @@ import Button from '../components/Button.astro'
   .hero-card {
     padding-top: 1.5rem;
     height: 100%;
+    position: relative;
+    z-index: 10;
   }
   .hero {
     height: 500px;
